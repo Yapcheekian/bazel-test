@@ -1,22 +1,22 @@
 java_binary(
-  name = "HelloWorld",
-  srcs = [
-    "src/HelloWorld.java",
-  ],
-  deps = [":LibraryExample"],
+    name = "HelloWorld",
+    srcs = [
+        "src/HelloWorld.java",
+    ],
+    deps = [":LibraryExample"],
 )
 
 java_library(
-  name = "LibraryExample",
-  srcs = ["src/IntMultiplier.java"],
+    name = "LibraryExample",
+    srcs = ["src/IntMultiplier.java"],
 )
 
 java_test(
-  name = "LibraryExampleTest",
-  srcs = ["test/IntMultiplierTest.java"],
-  deps = [
-      ":LibraryExample",
-      "//third_party:junit4",
-  ],
-  test_class = "IntMultiplierTest",
+    name = "LibraryExampleTest",
+    srcs = ["test/IntMultiplierTest.java"],
+    test_class = "IntMultiplierTest",
+    deps = [
+        ":LibraryExample",
+        "//third_party:junit4",
+    ],
 )
