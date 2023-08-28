@@ -7,6 +7,7 @@ bazel build android:HelloWorld
 
 ### Build and Run
 bazel run android:HelloWorld
+bazel run backend:hello_world_go
 
 ## Library
 ### Build
