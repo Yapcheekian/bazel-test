@@ -38,4 +38,4 @@ gazelle -go_prefix github.com/Yapcheekian/bazel-test
 gazelle update-repos -from_file=go.mod -to_macro=deps.bzl%go_dependencies -prune
 bazel run //:gazelle
 bazel run //:gazelle -- update-repos -from_file=go.mod -to_macro=deps.bzl%go_dependencies
-
+bazel run //:gazelle -- update

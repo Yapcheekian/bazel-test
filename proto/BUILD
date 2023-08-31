@@ -12,7 +12,8 @@ java_proto_library(
     deps = [":message_proto"],
 )
 
-load("@io_bazel_rules_go//proto:def.bzl", "go_proto_compile", "go_proto_library")
+load("@io_bazel_rules_go//proto:def.bzl", "go_proto_library")
+load("@io_bazel_rules_go//proto:compiler.bzl", "go_proto_compiler")
 
 go_proto_library(
     name = "message_go_proto",
@@ -21,9 +22,8 @@ go_proto_library(
     visibility = ["//visibility:public"],
 )
 
-go_proto_compile(
-    name = "person_go_proto",
-    protos = ["@rules_proto_grpc//example/proto:person_proto"],
+go_proto_compiler(
+    name = "compiler",
 )
 
 go_library(
